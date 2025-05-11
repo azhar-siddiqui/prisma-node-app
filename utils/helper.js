@@ -6,3 +6,9 @@ export const asyncHandler = (fn) => async (req, res) => {
     return sendErrorResponse(res, 500, "Internal server error");
   }
 };
+
+export const isValidUUID = (id) => {
+  const uuidRegex =
+    /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+  return uuidRegex.test(id);
+};
